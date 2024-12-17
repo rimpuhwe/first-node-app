@@ -25,10 +25,10 @@ emitter.on('messagelogged' , function(){
 //raise an event
 emitter.emit('messagelogged');
 */
-// event argument 
-const EventEmitter = require('events');
-const emitter = new EventEmitter()
-emitter.on('logging', e => {
+ //event argument 
+const Logger = require('./looger')
+const logger = new Logger()
+logger.on('logging', e => {
     console.log('successfully', e)
 })
-emitter.emit('logging',{data:'hey you a so beautiful'})
+logger.logMessage('message');
