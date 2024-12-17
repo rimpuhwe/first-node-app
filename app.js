@@ -15,7 +15,7 @@ var freeMemory = os.freemem();
 console.log(`total memory:${totalMemory}`);
 console.log(`free memory:${freeMemory}`);
 */
-// event module
+/* event module
 const EventEmitter = require('events');
 const emitter = new EventEmitter();
 //register a listener
@@ -24,4 +24,11 @@ emitter.on('messagelogged' , function(){
 })
 //raise an event
 emitter.emit('messagelogged');
-
+*/
+// event argument 
+const EventEmitter = require('events');
+const emitter = new EventEmitter()
+emitter.on('logging', e => {
+    console.log('successfully', e)
+})
+emitter.emit('logging',{data:'hey you a so beautiful'})
