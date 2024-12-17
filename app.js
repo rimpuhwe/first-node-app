@@ -15,3 +15,13 @@ var freeMemory = os.freemem();
 console.log(`total memory:${totalMemory}`);
 console.log(`free memory:${freeMemory}`);
 */
+// event module
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
+//register a listener
+emitter.on('messagelogged' , function(){
+    console.log('a message was logged')  // this will be executed when the event is triggered.  //
+})
+//raise an event
+emitter.emit('messagelogged');
+
