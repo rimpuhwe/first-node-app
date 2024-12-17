@@ -25,10 +25,22 @@ emitter.on('messagelogged' , function(){
 //raise an event
 emitter.emit('messagelogged');
 */
- //event argument 
+/* //event argument 
 const Logger = require('./looger')
 const logger = new Logger()
 logger.on('logging', e => {
     console.log('successfully', e)
 })
 logger.logMessage('message');
+*/
+//http module
+const http = require('http');
+const server = http.createServer((req, res)=>{
+    if(req.url === '/'){
+        res.write('hello world');
+        res.end();
+    }
+});
+
+server.listen(3000);
+console.log('listening on port 3000...');
